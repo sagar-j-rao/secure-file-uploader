@@ -1,0 +1,56 @@
+.upload-card {
+    width: 360px;
+    margin: 100px auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .file-select-button {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s;
+  }
+  
+  .file-select-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .file-name {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 14px;
+    word-break: break-all;
+  }
+  
+  .upload-button {
+    padding: 0.5rem 1.2rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .upload-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  

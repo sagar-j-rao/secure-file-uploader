@@ -1,0 +1,25 @@
+<div class="upload-card">
+    <h2>Secure File Uploader</h2>
+  
+    <input 
+      type="file" 
+      id="fileInput" 
+      (change)="onFileSelected($event)" 
+      hidden
+    />
+    
+    <label for="fileInput" class="file-select-button">
+      Choose File
+    </label>
+  
+    <p class="file-name" *ngIf="selectedFileName">{{ selectedFileName }}</p>
+  
+    <button 
+      (click)="onUpload()" 
+      [disabled]="!selectedFile"
+      class="upload-button"
+    >
+      Upload
+    </button>
+  </div>
+  
