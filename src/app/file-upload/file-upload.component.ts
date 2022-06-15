@@ -9,6 +9,9 @@ export class FileUploadComponent {
   selectedFile: File | null = null;
   selectedFileName = '';
   isUploading = false;
+  downloadUrl: string = '';
+  copied = false;
+
   constructor(private uploadService: UploadService) {}
 
   onFileSelected(event: Event) {
@@ -37,6 +40,12 @@ export class FileUploadComponent {
           complete: () => {
             console.log('Upload finished');
             this.isUploading = false;
+    
+            this.uploadService.getSignedDownloadUrl(filename).subscribe({
+              next: (res) => {
+                this.downloadUrl = res.url;
+              }
+            });
           },
           error: (err) => {
             console.error('Upload failed', err);
@@ -45,10 +54,18 @@ export class FileUploadComponent {
         });
       },
       error: (err) => {
-        console.error('Error generating URL', err);
+        console.error('Error generating upload URL', err);
         this.isUploading = false;
       }
     });
+    
   }
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.downloadUrl).then(() => {
+      this.copied = true;
+      setTimeout(() => this.copied = false, 2000);
+    });
+  }
+  
   
 }

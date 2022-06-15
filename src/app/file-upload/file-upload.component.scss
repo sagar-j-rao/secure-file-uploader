@@ -70,3 +70,31 @@
     100% { transform: rotate(360deg); }
   }
   
+  .download-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #e7f5ff;
+    border: 1px solid #91d5ff;
+    border-radius: 6px;
+    text-align: left;
+  }
+  
+  .link-box {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+  }
+  
+  button {
+    margin-right: 0.5rem;
+  }
+  
+  .copied-msg {
+    color: green;
+    font-size: 0.9rem;
+  }
+  

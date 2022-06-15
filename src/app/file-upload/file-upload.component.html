@@ -21,6 +21,14 @@
     >
       {{ isUploading ? 'Uploading...' : 'Upload' }}
     </button>
+    <div *ngIf="downloadUrl" class="download-box">
+        <p>✅ File uploaded successfully!</p>
+        <p><strong>Link (valid for 15 mins):</strong></p>
+        <input type="text" [value]="downloadUrl" readonly class="link-box" />
+        <button (click)="copyToClipboard()">Copy</button>
+        <span *ngIf="copied" class="copied-msg">Copied!</span>
+      </div>
+      
   
     <!-- Spinner -->
     <div class="spinner" *ngIf="isUploading"></div>

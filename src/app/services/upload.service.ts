@@ -25,4 +25,11 @@ export class UploadService {
       observe: 'events'
     });
   }
+
+  getSignedDownloadUrl(filename: string) {
+    return this.http.get<{ url: string }>(
+      `${this.backendUrl}/generate-download-url?filename=${filename}`
+    );
+  }
+  
 }
