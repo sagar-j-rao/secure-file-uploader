@@ -16,10 +16,13 @@
   
     <button 
       (click)="onUpload()" 
-      [disabled]="!selectedFile"
+      [disabled]="!selectedFile || isUploading"
       class="upload-button"
     >
-      Upload
+      {{ isUploading ? 'Uploading...' : 'Upload' }}
     </button>
+  
+    <!-- Spinner -->
+    <div class="spinner" *ngIf="isUploading"></div>
   </div>
   
